@@ -14,6 +14,7 @@ export default function TopicPage() {
   return (
     <div>
       <Link to="/">Home</Link>
+      <h1>{topic}</h1>
       {articles.map((article) => {
         return (
           <div className="articleCard" key={article.article_id}>
