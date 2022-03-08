@@ -10,6 +10,10 @@
       "header header"
       "nav content";
   }
+  .singleArticle {
+    max-width: 50%;
+    margin: auto;
+  }
 }
 
 .articleList {
@@ -29,8 +33,26 @@
 
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px;
-  color: #fff;
+  justify-content: space-evenly;
+  padding: 1%;
+  padding-bottom: 2%;
+}
+
+dd {
+  margin: auto;
+}
+
+.articleButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.voteButton {
+  flex: 0 25%;
+}
+
+.commentButton {
+  flex: 0 25%;
 }
