@@ -7,7 +7,7 @@ export default function ArticleCard({ article }) {
         {article.title}
       </Link>
       <p>By {article.author}</p>{" "}
-      <p>{new Date(article.created_at).toLocaleDateString("en-uk")}</p>
+      <p>{new Date(article.created_at).toLocaleDateString()}</p>
       <p>{article.topic}</p>
     </div>
   );
