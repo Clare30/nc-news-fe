@@ -14,7 +14,12 @@ export default function SingleArticle() {
       setIsLoading(false);
     });
   }, [id]);
-  if (isLoading) <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <progress className="progress is-small is-primary" max="100">
+        15%
+      </progress>
+    );
   return (
     <article className="singleArticle">
       <h1>{article.title}</h1>
