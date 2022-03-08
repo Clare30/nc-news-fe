@@ -1,6 +1,22 @@
 .App {
-  align-content: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto auto;
   text-align: center;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content";
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    grid-template-columns: 25% 75%;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+      "header header"
+      "nav content";
+  }
 }
 
 .articleList {
@@ -14,5 +30,14 @@
 
 .articleCard {
   border: 5px solid;
+  border-radius: 10%;
   padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  color: #fff;
 }
