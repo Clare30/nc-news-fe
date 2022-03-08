@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 const fetchArticles = () => {
-    return api.get("/articles").then((res) => {
+  return api.get("/articles").then((res) => {
     return res.data;
   });
 };
@@ -21,4 +21,10 @@ const fetchArticlesByTopic = (topic) => {
     return res.data;
   });
 };
-export { fetchArticles, fetchTopics, fetchArticlesByTopic };
+
+const fetchArticlesById = (id) => {
+  return api.get(`/articles/${id}`).then((res) => { 
+    return res.data
+  })
+};
+export { fetchArticles, fetchTopics, fetchArticlesByTopic, fetchArticlesById };
