@@ -11,7 +11,7 @@ export default function SingleArticle() {
 
   useEffect(() => {
     setError(false);
-    setIsLoading(true);
+    setIsLoading(false);
     api
       .fetchArticlesById(id)
       .then(({ article }) => {
