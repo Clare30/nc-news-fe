@@ -4,11 +4,8 @@ const api = axios.create({
   baseURL: "https://nc-news-cm.herokuapp.com/api",
 });
 
-const fetchArticles = (topic) => {
-  let query = `/articles`;
-  if (topic) query += `?topic=${topic}`;
-
-  return api.get(query).then((res) => {
+const fetchArticles = () => {
+    return api.get("/articles").then((res) => {
     return res.data;
   });
 };
