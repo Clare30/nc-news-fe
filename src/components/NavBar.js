@@ -13,9 +13,16 @@ export default function NavBar() {
 
   return (
     <div>
-      <nav>
+      <nav className="navbar">
+        <Link to="/" className="navlink">
+          All
+        </Link>
         {topics.map(({ slug }) => {
-          return <Link to={`/${slug}`} key={slug}>{slug} </Link>;
+          return (
+            <Link to={`/${slug}`} key={slug} className="navlink">
+              {slug.charAt(0).toUpperCase() + slug.slice(1)}{" "}
+            </Link>
+          );
         })}
       </nav>
     </div>
