@@ -1,30 +1,26 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import * as api from "../api";
+import ArticleCard from "./ArticleCard";
+
 export default function TopicPage() {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { topic } = useParams();
 
   useEffect(() => {
     api.fetchArticlesByTopic(topic).then(({ articles }) => {
+      setIsLoading(true);
       setArticles(articles);
+      setIsLoading(false);
     });
   }, [topic]);
-
+  if (isLoading) <p>Loading ...</p>;
   return (
-    <div>
-      <Link to="/">Home</Link>
-      <h1>{topic}</h1>
+    <section className="articleList">
       {articles.map((article) => {
-        return (
-          <div className="articleCard" key={article.article_id}>
-            <Link to={`/${topic}/${article.article_id}`}>{article.title}</Link>
-            <p>By {article.author}</p>{" "}
-            <p>{new Date(article.created_at).toLocaleDateString("en-uk")}</p>
-            <p>{article.topic}</p>
-          </div>
-        );
+        return <ArticleCard article={article} key={article.article_id} />;
       })}
-    </div>
+    </section>
   );
 }
