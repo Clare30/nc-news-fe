@@ -9,13 +9,22 @@ export default function TopicPage() {
   const { topic } = useParams();
 
   useEffect(() => {
+    setIsLoading(true);
     api.fetchArticlesByTopic(topic).then(({ articles }) => {
-      setIsLoading(true);
       setArticles(articles);
       setIsLoading(false);
     });
   }, [topic]);
-  if (isLoading) <p>Loading ...</p>;
+
+  if (isLoading) {
+    return (
+      <>
+        <progress className="progress is-small is-primary" max="100">
+          15%
+        </progress>
+      </>
+    );
+  }
   return (
     <section className="articleList">
       {articles.map((article) => {
