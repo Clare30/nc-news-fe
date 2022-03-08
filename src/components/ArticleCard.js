@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import css from "../App.css";
 
 export default function ArticleCard({ article }) {
   return (
