@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import * as api from "../api";
 import ArticleCard from "./ArticleCard.js";
 
-
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setIsLoading(true);
     api.fetchArticles().then(({ articles }) => {
@@ -14,7 +14,14 @@ export default function ArticleList() {
     });
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <>
+        <progress className="progress is-small is-primary" max="100">
+          15%
+        </progress>
+      </>
+    );
   return (
     <section className="articleList">
       {articles.map((article) => {
