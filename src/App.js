@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ArticleList />} />
           <Route path="/:topic" element={<TopicPage />} />
-          <Route path = "/:topic/:id" element={<SingleArticle />} />
+          <Route path="/articles/:id" element={<SingleArticle />} />
         </Routes>
       </div>
     </BrowserRouter>
