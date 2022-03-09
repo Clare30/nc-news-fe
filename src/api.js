@@ -23,8 +23,20 @@ const fetchArticlesByTopic = (topic) => {
 };
 
 const fetchArticlesById = (id) => {
-  return api.get(`/articles/${id}`).then((res) => { 
-    return res.data
-  })
+  return api.get(`/articles/${id}`).then((res) => {
+    return res.data;
+  });
 };
-export { fetchArticles, fetchTopics, fetchArticlesByTopic, fetchArticlesById };
+
+const amendVoteCount = (id, num) => {
+  return api.patch(`/articles/${id}`, { inc_votes: num }).then((res) => {
+    return res.data;
+  });
+};
+export {
+  fetchArticles,
+  fetchTopics,
+  fetchArticlesByTopic,
+  fetchArticlesById,
+  amendVoteCount,
+};
