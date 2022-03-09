@@ -18,12 +18,6 @@ const fetchTopics = () => {
   });
 };
 
-const fetchArticlesByTopic = (topic) => {
-  return api.get(`/articles?topic=${topic}`).then((res) => {
-    return res.data;
-  });
-};
-
 const fetchArticlesById = (id) => {
   return api.get(`/articles/${id}`).then((res) => {
     return res.data;
@@ -35,10 +29,4 @@ const amendVoteCount = (id, num) => {
     return res.data;
   });
 };
-export {
-  fetchArticles,
-  fetchTopics,
-  fetchArticlesByTopic,
-  fetchArticlesById,
-  amendVoteCount,
-};
+export { fetchArticles, fetchTopics, fetchArticlesById, amendVoteCount };
