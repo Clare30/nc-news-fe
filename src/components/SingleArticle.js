@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as api from "../api";
+import ArticleVote from "./ArticleVotes";
 import ErrorComponent from "./ErrorComponent";
 
 export default function SingleArticle() {
@@ -11,7 +12,7 @@ export default function SingleArticle() {
 
   useEffect(() => {
     setError(false);
-    setIsLoading(false);
+    setIsLoading(true);
     api
       .fetchArticlesById(id)
       .then(({ article }) => {
@@ -41,11 +42,8 @@ export default function SingleArticle() {
         Posted on {new Date(article.created_at).toLocaleDateString("en-uk")}
       </p>
       <p className="articleBody">{article.body}</p>
-
       <div className="articleButtons">
-        <div className="voteButton">
-          Vote <button>+</button> <button>-</button>
-        </div>
+        <ArticleVote article={article} setArticle={setArticle} />
         <button className="commentButton">Show comments</button>
       </div>
     </article>
