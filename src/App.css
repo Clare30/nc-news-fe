@@ -56,12 +56,12 @@ dd {
 }
 
 .voteButton {
-  flex: 0 25%;
+  flex: 0 20%;
   font-size: 1;
 }
 
 .commentButton {
-  flex: 0 25%;
+  flex: 0 20%;
 }
 
 .postedDate {
