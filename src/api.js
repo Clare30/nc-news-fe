@@ -33,10 +33,18 @@ const amendVoteCount = (id, num) => {
     return res.data;
   });
 };
+
+const fetchComments = (id) => {
+  return api.get(`/articles/${id}/comments`).then((res) => {
+    return res.data;
+  });
+};
+
 export {
   fetchArticles,
   fetchTopics,
   fetchArticlesByTopic,
   fetchArticlesById,
   amendVoteCount,
+  fetchComments,
 };
