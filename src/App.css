@@ -52,16 +52,17 @@ dd {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 5%, 5%;
 }
 
 .voteButton {
-  flex: 0 20%;
+  padding-bottom: 10%;
+  flex: 0 25%;
   font-size: 1;
+  max-width: 50%;
 }
 
 .commentButton {
-  flex: 0 20%;
+  flex: 0 25%;
 }
 
 .postedDate {
