@@ -4,20 +4,16 @@ const api = axios.create({
   baseURL: "https://nc-news-cm.herokuapp.com/api",
 });
 
-const fetchArticles = () => {
-  return api.get("/articles").then((res) => {
+const fetchArticles = (topic) => {
+  let request = "/articles";
+  if (topic) request += `?topic=${topic}`;
+  return api.get(request).then((res) => {
     return res.data;
   });
 };
 
 const fetchTopics = () => {
   return api.get("/topics").then((res) => {
-    return res.data;
-  });
-};
-
-const fetchArticlesByTopic = (topic) => {
-  return api.get(`/articles?topic=${topic}`).then((res) => {
     return res.data;
   });
 };
@@ -33,10 +29,4 @@ const amendVoteCount = (id, num) => {
     return res.data;
   });
 };
-export {
-  fetchArticles,
-  fetchTopics,
-  fetchArticlesByTopic,
-  fetchArticlesById,
-  amendVoteCount,
-};
+export { fetchArticles, fetchTopics, fetchArticlesById, amendVoteCount };
