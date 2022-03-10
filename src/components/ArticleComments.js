@@ -7,7 +7,6 @@ import * as api from "../api";
 
 export default function ArticleComments() {
   const [comments, setComments] = useState([]);
-  const [commentCount, setCommentCount] = useState(0);
 
   const { id } = useParams();
 
@@ -19,12 +18,9 @@ export default function ArticleComments() {
 
   return (
     <section>
-      Comments {comments.length + commentCount}
+      Comments {comments.length}
       <Expandable className="commentButton">
-        <PostComment
-          setCommentCount={setCommentCount}
-          commentCount={commentCount}
-        />
+        <PostComment setComments={setComments} />
         <div className="commentList">
           {comments.map((comment) => {
             return <CommentCard key={comment.comment_id} comment={comment} />;
