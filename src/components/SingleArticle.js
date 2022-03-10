@@ -7,7 +7,7 @@ import ErrorComponent from "./ErrorComponent";
 
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
 
@@ -39,12 +39,11 @@ export default function SingleArticle() {
       <h1>{article.title}</h1>
       <p>Written by {article.author} </p>
       <p className="postedDate">
-        {" "}
         Posted on {new Date(article.created_at).toLocaleDateString("en-uk")}
       </p>
       <p className="articleBody">{article.body}</p>
       <div className="articleButtons">
-        <ArticleVote article={article}  />
+        <ArticleVote article={article} />
         <ArticleComments />
       </div>
     </article>

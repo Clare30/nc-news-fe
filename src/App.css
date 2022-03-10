@@ -34,10 +34,7 @@
 .navbar {
   display: flex;
   justify-content: space-evenly;
-  padding: 1%;
-  padding-bottom: 2%;
-  max-width: 75%;
-  margin: auto;
+  padding-bottom: 5%;
 }
 
 dd {
@@ -78,4 +75,8 @@ dd {
 .commentList {
   margin-top: 5%;
   border-top: black solid;
+}
+
+.commentLogin {
+  font-weight: bold;
 }
