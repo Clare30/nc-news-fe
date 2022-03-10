@@ -35,13 +35,14 @@
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 5%;
-}
-
-dd {
+  max-width: 75%;
   margin: auto;
 }
+
 .articleBody {
   padding: 5%;
+  max-width: 75%;
+  margin: auto;
 }
 
 .articleButtons {
@@ -49,17 +50,32 @@ dd {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  max-width: 75%;
+  margin: auto;
 }
 
 .voteButton {
-  padding-bottom: 10%;
-  flex: 0 25%;
-  font-size: 1;
-  max-width: 50%;
+  flex: 1px;
+  padding: 4px;
+  margin-top: 5%;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #e6e5ed;
+  justify-content: flex-start;
+  max-width: 40%;
+  color: rgb(0, 0, 0);
 }
 
 .commentButton {
-  flex: 0 25%;
+  flex: 1px;
+  padding: 4px;
+  margin-top: 5%;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #e6e5ed;
+  background-color: #f8f8f9;
+  justify-content: flex-start;
+  margin-bottom: 5%;
 }
 
 .postedDate {
@@ -73,10 +89,37 @@ dd {
 }
 
 .commentList {
+  margin: auto;
   margin-top: 5%;
   border-top: black solid;
+  max-width: 100%;
 }
 
 .commentLogin {
   font-weight: bold;
+}
+
+.commentBox {
+  flex: 1px;
+  padding: 4px;
+  margin-right: 1px;
+  margin-top: 5%;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #e6e5ed;
+  background-color: #f8f8f9;
+  justify-content: flex-start;
+  margin-bottom: 5%;
+}
+
+.submit {
+  flex: 1px;
+  padding: 4px;
+  margin-right: 1px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #e6e5ed;
+  background-color: #f8f8f9;
+  justify-content: flex-start;
+  margin-bottom: 5%;
 }
