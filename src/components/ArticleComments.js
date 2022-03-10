@@ -16,10 +16,13 @@ export default function ArticleComments() {
 
   return (
     <section>
-      Comments {comments.length} <Expandable className="commentButton" >
-        {comments.map((comment) => {
-          return <CommentCard key={comment.comment_id} comment={comment} />;
-        })}
+      Comments {comments.length}{" "}
+      <Expandable className="commentButton">
+        <div className="commentList">
+          {comments.map((comment) => {
+            return <CommentCard key={comment.comment_id} comment={comment} />;
+          })}
+        </div>
       </Expandable>
     </section>
   );

@@ -70,3 +70,12 @@ dd {
   text-align: center;
   font-size: 0.7em;
 }
+
+.commentCard {
+  border-bottom: black solid;
+}
+
+.commentList {
+  margin-top: 5%;
+  border-top: black solid;
+}
