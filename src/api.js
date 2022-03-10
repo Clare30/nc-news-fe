@@ -30,19 +30,28 @@ const amendVoteCount = (id, num) => {
   });
 };
 
-
 const fetchComments = (id) => {
   return api.get(`/articles/${id}/comments`).then((res) => {
     return res.data;
   });
 };
 
+const fetchUsers = () => {
+  return api.get("/users").then((res) => res.data);
+};
+
+const postComment = (newComment, id) => {
+  return api
+    .post(`/articles/${id}/comments`, newComment)
+    .then((res) => res.data);
+};
+
 export {
   fetchArticles,
   fetchTopics,
-  fetchArticlesByTopic,
   fetchArticlesById,
   amendVoteCount,
   fetchComments,
+  fetchUsers,
+  postComment,
 };
-
