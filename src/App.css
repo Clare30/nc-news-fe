@@ -79,3 +79,7 @@ dd {
   margin-top: 5%;
   border-top: black solid;
 }
+
+.commentLogin { 
+  font-weight: bold;
+}
