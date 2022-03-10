@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as api from "../api";
+import LoginButton from "./LoginButton";
 
 export default function NavBar() {
   const [topics, setTopics] = useState([]);
@@ -14,6 +15,7 @@ export default function NavBar() {
   return (
     <div>
       <nav className="navbar">
+        <LoginButton />
         <Link to="/" className="navlink">
           All
         </Link>
