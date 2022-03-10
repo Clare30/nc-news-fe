@@ -19,7 +19,7 @@ export default function ArticleComments() {
   return (
     <section>
       Comments {comments.length}
-      <Expandable className="commentButton">
+      <Expandable classAssign="commentButton">
         <PostComment setComments={setComments} />
         <div className="commentList">
           {comments.map((comment) => {
