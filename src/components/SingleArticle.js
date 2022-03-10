@@ -7,7 +7,7 @@ import ErrorComponent from "./ErrorComponent";
 
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
 
