@@ -29,4 +29,20 @@ const amendVoteCount = (id, num) => {
     return res.data;
   });
 };
-export { fetchArticles, fetchTopics, fetchArticlesById, amendVoteCount };
+
+
+const fetchComments = (id) => {
+  return api.get(`/articles/${id}/comments`).then((res) => {
+    return res.data;
+  });
+};
+
+export {
+  fetchArticles,
+  fetchTopics,
+  fetchArticlesByTopic,
+  fetchArticlesById,
+  amendVoteCount,
+  fetchComments,
+};
+

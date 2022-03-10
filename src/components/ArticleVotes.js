@@ -20,7 +20,7 @@ export default function ArticleVote({ article }) {
 
   return (
     <div className="voteButton">
-      Votes {article.votes + votes}
+      Votes {article.votes + votes} <br></br>
       <button
         disabled={votes === 1}
         onClick={() => {

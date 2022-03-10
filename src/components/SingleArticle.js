@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as api from "../api";
 import ArticleVote from "./ArticleVotes";
+import ArticleComments from "./ArticleComments";
 import ErrorComponent from "./ErrorComponent";
 
 export default function SingleArticle() {
@@ -43,8 +44,8 @@ export default function SingleArticle() {
       </p>
       <p className="articleBody">{article.body}</p>
       <div className="articleButtons">
-        <ArticleVote article={article} setArticle={setArticle} />
-        <button className="commentButton">Show comments</button>
+        <ArticleVote article={article}  />
+        <ArticleComments />
       </div>
     </article>
   );
