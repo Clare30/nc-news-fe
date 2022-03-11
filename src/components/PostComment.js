@@ -47,7 +47,7 @@ export default function PostComment({ setComments }) {
     <form onSubmit={handleSubmit}>
       <p>Logged in as {loggedIn}</p>
       <label htmlFor="body"></label>
-      <input
+      <input 
         value={newComment}
         required="required"
         name="body"
