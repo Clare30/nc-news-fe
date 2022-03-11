@@ -5,12 +5,6 @@ export default function ArticleSort({
   button,
   setButton,
 }) {
-  const dropDown = [
-    { query: "created_at", name: "Date" },
-    { query: "comment_count", name: "Comments" },
-    { query: "votes", name: "Votes" },
-  ];
-
   const toggle = (event) => {
     setButton((currOpen) => !currOpen);
     setOrder(event.target.innerHTML.toUpperCase());
@@ -24,24 +18,11 @@ export default function ArticleSort({
           setSortBy(event.target.value);
         }}
       >
-        {dropDown.map(({ name, query }) => {
-          return (
-            <option value={query} key={query}>
-              {name}
-            </option>
-          );
-        })}
+        <option value="created_at">Date</option>
+        <option value="comment_count">Comments</option>
+        <option value="votes">Votes</option>
       </select>
       <button onClick={toggle}>{button ? "Desc" : "Asc"}</button>
-
-      <button
-        onClick={() => {
-          setSortBy(null);
-          setOrder(null);
-        }}
-      >
-        Clear
-      </button>
     </div>
   );
 }
