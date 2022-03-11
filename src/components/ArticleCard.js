@@ -8,13 +8,18 @@ export default function ArticleCard({ article }) {
       </div>
       <div className="card-content has-text-centered">
         <p>By {article.author}</p>
-      
-     
         <p>{new Date(article.created_at).toLocaleDateString()}</p>
-      
-      
         <p>{article.topic}</p>
-     </div>
+      </div>
+      <div>
+        <div className="icon-text">
+          <ion-icon name="thumbs-up-sharp"></ion-icon>
+          {article.votes}
+        </div>
+        <div className="icon-text">
+          <ion-icon name="chatbubble-sharp"></ion-icon> {article.comment_count}
+        </div>
+      </div>
     </div>
   );
 }
