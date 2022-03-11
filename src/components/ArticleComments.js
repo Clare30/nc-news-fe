@@ -1,5 +1,5 @@
 import CommentCard from "./CommentCard";
-import { Expandable } from "./ButtonFunctions";
+import Expandable from "./Expandable";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostComment from "./PostComment";
@@ -10,7 +10,7 @@ export default function ArticleComments() {
 
   const { id } = useParams();
 
-  useEffect(() => { 
+  useEffect(() => {
     api.fetchComments(id).then(({ comments }) => {
       setComments(comments);
     });
