@@ -25,8 +25,8 @@ export default function NavBar() {
             </div>
             {topics.map(({ slug }) => {
               return (
-                <div className="navbar-item">
-                  <Link to={`/${slug}`} key={slug} className="navbar-item">
+                <div key={slug} className="navbar-item">
+                  <Link to={`/${slug}`} className="navbar-item">
                     {slug.charAt(0).toUpperCase() + slug.slice(1)}{" "}
                   </Link>
                 </div>
