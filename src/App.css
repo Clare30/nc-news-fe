@@ -32,6 +32,7 @@
 }
 
 .navbar {
+  grid-area: nav;
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 5%;
