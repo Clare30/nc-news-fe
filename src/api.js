@@ -46,6 +46,10 @@ const postComment = (newComment, id) => {
     .then((res) => res.data);
 };
 
+export function deleteComment(id) {
+  return api.delete(`/comments/${id}`).then((res) => res.status);
+}
+
 export {
   fetchArticles,
   fetchTopics,
