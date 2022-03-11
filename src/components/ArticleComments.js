@@ -1,5 +1,5 @@
 import CommentCard from "./CommentCard";
-import Expandable from "./Expandable";
+import { Expandable } from "./ButtonFunctions";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostComment from "./PostComment";
