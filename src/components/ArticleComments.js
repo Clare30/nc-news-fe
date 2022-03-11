@@ -10,7 +10,7 @@ export default function ArticleComments() {
 
   const { id } = useParams();
 
-  useEffect(() => {
+  useEffect(() => { 
     api.fetchComments(id).then(({ comments }) => {
       setComments(comments);
     });
