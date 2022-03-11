@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostComment from "./PostComment";
 import * as api from "../api";
+import DeleteComment from "./DeleteComment";
 
 export default function ArticleComments() {
   const [comments, setComments] = useState([]);
@@ -23,7 +24,16 @@ export default function ArticleComments() {
         <PostComment setComments={setComments} />
         <div className="commentList">
           {comments.map((comment) => {
-            return <CommentCard key={comment.comment_id} comment={comment} />;
+            return (
+              <div>
+                {" "}
+                <CommentCard key={comment.comment_id} comment={comment} />
+                <DeleteComment
+                  comment={comment}
+                  setComments={setComments}
+                />{" "}
+              </div>
+            );
           })}
         </div>
       </Expandable>
