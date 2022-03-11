@@ -7,11 +7,10 @@ import ArticleSort from "./ArticleSort";
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [sortBy, setSortBy] = useState();
-  const [order, setOrder] = useState();
+  const [sortBy, setSortBy] = useState(null);
+  const [order, setOrder] = useState(null);
+  const [button, setButton] = useState(false);
   const { topic } = useParams();
-
-  console.log(sortBy, order);
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,11 +29,21 @@ export default function ArticleList() {
       </>
     );
   return (
-    <section className="articleList">
-      <ArticleSort setOrder={setOrder} setSortBy={setSortBy} />
-      {articles.map((article) => {
-        return <ArticleCard article={article} key={article.article_id} />;
-      })}
+    <section>
+      <div className="container">
+        <ArticleSort
+          setOrder={setOrder}
+          setSortBy={setSortBy}
+          sortBy={sortBy}
+          button={button}
+          setButton={setButton}
+        />
+        <div>
+          {articles.map((article) => {
+            return <ArticleCard article={article} key={article.article_id} />;
+          })}
+        </div>
+      </div>
     </section>
   );
 }
