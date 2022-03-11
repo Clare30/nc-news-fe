@@ -20,8 +20,8 @@ export default function DeleteComment({ comment, setComments }) {
           });
         });
         alert("Comment deleted!");
-        setIsLoading(false);
         setDisable(0);
+        setIsLoading(false);
       })
       .catch(() => {
         setError("Sorry, that didn't work, please try again");
@@ -38,5 +38,5 @@ export default function DeleteComment({ comment, setComments }) {
       </div>
     );
 
-  return <p></p>;
+  return <> </>
 }

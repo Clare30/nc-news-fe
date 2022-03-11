@@ -24,6 +24,8 @@ export default function PostComment({ setComments }) {
           return [comment, ...currComments];
         });
         setIsLoading(false);
+        alert("Comment posted!");
+        setCommentCount(0);
       })
       .catch((error) => {
         setCommentCount((currCount) => currCount - 1);
@@ -40,8 +42,6 @@ export default function PostComment({ setComments }) {
       </p>
     );
   }
-
-  if (commentCount === 1) return <p> Comment posted! </p>;
 
   return (
     <form onSubmit={handleSubmit}>
