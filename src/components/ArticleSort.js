@@ -1,5 +1,9 @@
 export default function ArticleSort({ setSortBy, setOrder }) {
-  const dropDown = ["created_at", "comment_count", "votes"];
+  const dropDown = [
+    { query: "created_at", name: "Date" },
+    { query: "comment_count", name: "Comments" },
+    { query: "votes", name: "Votes" },
+  ];
 
   return (
     <div>
@@ -8,10 +12,12 @@ export default function ArticleSort({ setSortBy, setOrder }) {
           setSortBy(event.target.value);
         }}
       >
-        {dropDown.map((sort) => {
-          return <option value={sort} key={sort}>
-            {sort}
-          </option>;
+        {dropDown.map(({name, query}) => {
+          return (
+            <option value={query} key={query}>
+              {name}
+            </option>
+          );
         })}
       </select>
 
