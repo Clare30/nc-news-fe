@@ -14,18 +14,27 @@ export default function NavBar() {
 
   return (
     <div>
-      <nav className="navbar">
-        <LoginButton />
-        <Link to="/" className="navlink">
-          All
-        </Link>
-        {topics.map(({ slug }) => {
-          return (
-            <Link to={`/${slug}`} key={slug} className="navlink">
-              {slug.charAt(0).toUpperCase() + slug.slice(1)}{" "}
-            </Link>
-          );
-        })}
+      <nav className="navbar navbar-divider">
+        <div className="navbar-menu is-active">
+          <div className="navbar-start">
+            <LoginButton />
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <Link to="/">All</Link>
+            </div>
+            {topics.map(({ slug }) => {
+              return (
+                <div className="navbar-item">
+                  <Link to={`/${slug}`} key={slug} className="navbar-item">
+                    {slug.charAt(0).toUpperCase() + slug.slice(1)}{" "}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+          <div className="navbar-item"></div>
+        </div>
       </nav>
     </div>
   );
