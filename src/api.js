@@ -38,4 +38,10 @@ export function postComment(newComment, id) {
   return api
     .post(`/articles/${id}/comments`, newComment)
     .then((res) => res.data);
+
+};
+
+export function deleteComment(id) {
+  return api.delete(`/comments/${id}`).then((res) => res.status);
 }
+

@@ -23,7 +23,11 @@ export default function ArticleComments() {
         <PostComment setComments={setComments} />
         <div className="commentList">
           {comments.map((comment) => {
-            return <CommentCard key={comment.comment_id} comment={comment} />;
+            return (
+              <div key={comment.comment_id}>
+                <CommentCard comment={comment} setComments={setComments} />
+              </div>
+            );
           })}
         </div>
       </Expandable>

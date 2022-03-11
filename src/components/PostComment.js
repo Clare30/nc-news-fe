@@ -15,6 +15,7 @@ export default function PostComment({ setComments }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsLoading(true);
+    setCommentCount((currCount) => currCount + 1);
     api
       .postComment({ username: loggedIn, body: newComment }, id)
       .then(({ comment }) => {
@@ -22,10 +23,7 @@ export default function PostComment({ setComments }) {
           setNewComment("");
           return [comment, ...currComments];
         });
-        setCommentCount((currCount) => currCount + 1);
-        alert("Comment Posted!");
         setIsLoading(false);
-        setCommentCount(0);
       })
       .catch((error) => {
         setCommentCount((currCount) => currCount - 1);
@@ -43,14 +41,13 @@ export default function PostComment({ setComments }) {
     );
   }
 
+  if (commentCount === 1) return <p> Comment posted! </p>;
+
   return (
-    <form onSubmit={handleSubmit} className="postComment">
+    <form onSubmit={handleSubmit}>
       <p>Logged in as {loggedIn}</p>
-      <label className="commentLabel" htmlFor="body">
-        Type your comment here:
-      </label>
+      <label htmlFor="body"></label>
       <input
-        className="input"
         value={newComment}
         required="required"
         name="body"
@@ -60,7 +57,7 @@ export default function PostComment({ setComments }) {
           setNewComment(event.target.value);
         }}
       ></input>
-      <button type="submit" className="submit" disabled={commentCount > 0}>
+      <button type="submit" disabled={commentCount > 0}>
         Post comment
       </button>
     </form>
