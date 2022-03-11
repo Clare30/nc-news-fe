@@ -50,7 +50,7 @@ export default function PostComment({ setComments }) {
         Type your comment here:
       </label>
       <input
-        className="commentBox"
+        className="input"
         value={newComment}
         required="required"
         name="body"
