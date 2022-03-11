@@ -14,5 +14,3 @@ export function Expandable({ children }) {
     </div>
   );
 }
-
-export function Toggle() {}
