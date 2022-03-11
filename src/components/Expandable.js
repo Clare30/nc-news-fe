@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function Expandable({ children }) {
+export default function Expandable({ children, classAssign }) {
   const [show, setShow] = useState(false);
 
   const toggleOpen = () => setShow((currOpen) => !currOpen);
 
   return (
     <div>
-      <button className="button is-small is-responsive" onClick={toggleOpen}>
+      <button className={classAssign} onClick={toggleOpen}>
         {show ? "Hide" : "Show"}
       </button>
       {show && children}

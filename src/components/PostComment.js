@@ -23,7 +23,9 @@ export default function PostComment({ setComments }) {
           return [comment, ...currComments];
         });
         setCommentCount((currCount) => currCount + 1);
+        alert("Comment Posted!");
         setIsLoading(false);
+        setCommentCount(0);
       })
       .catch((error) => {
         setCommentCount((currCount) => currCount - 1);
@@ -41,13 +43,14 @@ export default function PostComment({ setComments }) {
     );
   }
 
-  if (commentCount === 1) return <p> Comment posted! </p>;
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="postComment">
       <p>Logged in as {loggedIn}</p>
-      <label htmlFor="body"></label>
+      <label className="commentLabel" htmlFor="body">
+        Type your comment here:
+      </label>
       <input
+        className="input"
         value={newComment}
         required="required"
         name="body"
@@ -57,7 +60,7 @@ export default function PostComment({ setComments }) {
           setNewComment(event.target.value);
         }}
       ></input>
-      <button type="submit" disabled={commentCount > 0}>
+      <button type="submit" className="submit" disabled={commentCount > 0}>
         Post comment
       </button>
     </form>

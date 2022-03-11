@@ -19,9 +19,9 @@ export default function ArticleVote({ article }) {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="voteButton">
+    <div>
       Votes {article.votes + votes} <br></br>
-      <button
+      <button className="voteButton"
         disabled={votes === 1}
         onClick={() => {
           handleVoteClick(1);
@@ -29,7 +29,7 @@ export default function ArticleVote({ article }) {
       >
         +
       </button>
-      <button
+      <button className="voteButton"
         disabled={votes <= 0}
         onClick={() => {
           handleVoteClick(-1);
