@@ -15,6 +15,7 @@ export default function PostComment({ setComments }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsLoading(true);
+    setCommentCount((currCount) => currCount + 1);
     api
       .postComment({ username: loggedIn, body: newComment }, id)
       .then(({ comment }) => {
@@ -22,7 +23,6 @@ export default function PostComment({ setComments }) {
           setNewComment("");
           return [comment, ...currComments];
         });
-        setCommentCount((currCount) => currCount + 1);
         alert("Comment Posted!");
         setIsLoading(false);
         setCommentCount(0);
@@ -33,7 +33,7 @@ export default function PostComment({ setComments }) {
       });
   };
 
-  if (error) return <p>{error}</p>;
+  if (error) return alert(error);
   if (isLoading) return <p>Posting...</p>;
   if (loggedIn.length <= 0) {
     return (

@@ -25,11 +25,10 @@ export default function DeleteComment({ comment, setComments }) {
       })
       .catch(() => {
         setError("Sorry, that didn't work, please try again");
-        setDisable(0);
       });
   };
+  if (error) return <p>{error}</p>;
   if (isLoading) return <p>Removing comment...</p>;
-  if (error) return alert(error);
   if (loggedIn === comment.author)
     return (
       <div>
@@ -39,5 +38,5 @@ export default function DeleteComment({ comment, setComments }) {
       </div>
     );
 
-  return <p></p>
+  return <p></p>;
 }
