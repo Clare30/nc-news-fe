@@ -4,54 +4,38 @@ const api = axios.create({
   baseURL: "https://nc-news-cm.herokuapp.com/api",
 });
 
-const fetchArticles = (topic) => {
-  let request = "/articles";
-  if (topic) request += `?topic=${topic}`;
-  return api.get(request).then((res) => {
-    return res.data;
-  });
-};
+export function fetchArticles(topic, sort_by, order) {
+  return api
+    .get("/articles", {
+      params: { topic, sort_by, order },
+    })
+    .then((res) => res.data);
+}
 
-const fetchTopics = () => {
-  return api.get("/topics").then((res) => {
-    return res.data;
-  });
-};
+export function fetchTopics() {
+  return api.get("/topics").then((res) => res.data);
+}
 
-const fetchArticlesById = (id) => {
-  return api.get(`/articles/${id}`).then((res) => {
-    return res.data;
-  });
-};
+export function fetchArticlesById(id) {
+  return api.get(`/articles/${id}`).then((res) => res.data);
+}
 
-const amendVoteCount = (id, num) => {
-  return api.patch(`/articles/${id}`, { inc_votes: num }).then((res) => {
-    return res.data;
-  });
-};
+export function amendVoteCount(id, num) {
+  return api
+    .patch(`/articles/${id}`, { inc_votes: num })
+    .then((res) => res.data);
+}
 
-const fetchComments = (id) => {
-  return api.get(`/articles/${id}/comments`).then((res) => {
-    return res.data;
-  });
-};
+export function fetchComments(id) {
+  return api.get(`/articles/${id}/comments`).then((res) => res.data);
+}
 
-const fetchUsers = () => {
+export function fetchUsers() {
   return api.get("/users").then((res) => res.data);
-};
+}
 
-const postComment = (newComment, id) => {
+export function postComment(newComment, id) {
   return api
     .post(`/articles/${id}/comments`, newComment)
     .then((res) => res.data);
-};
-
-export {
-  fetchArticles,
-  fetchTopics,
-  fetchArticlesById,
-  amendVoteCount,
-  fetchComments,
-  fetchUsers,
-  postComment,
-};
+}
