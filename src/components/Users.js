@@ -12,13 +12,13 @@ export default function Users({ setLoggedIn }) {
   }, []);
 
   return (
-    <section>
-      <h1> Login </h1>
-      {users.map((user) => {
-        return (
-          <UserCard key={user.username} user={user} setLoggedIn={setLoggedIn} />
-        );
-      })}
-    </section>
+    <div>
+      <h1 className="has-text-weight-bold"> Login </h1>
+      <div className="mt-5 block">
+        {users.map((user) => {
+          return <UserCard key={user.username} user={user} setLoggedIn={setLoggedIn} />;
+        })}
+      </div>
+    </div>
   );
 }

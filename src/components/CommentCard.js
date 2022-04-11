@@ -1,7 +1,7 @@
 import DeleteComment from "./DeleteComment";
 export default function CommentCard({ comment, setComments }) {
   return (
-    <div className="commentCard">
+    <div >
       <h3>{comment.author}</h3>
       <DeleteComment comment={comment} setComments={setComments} />
       <p>

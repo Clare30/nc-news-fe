@@ -44,10 +44,11 @@ export default function PostComment({ setComments }) {
   if (commentCount === 1) return <p> Comment posted! </p>;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="content" onSubmit={handleSubmit}>
       <p>Logged in as {loggedIn}</p>
       <label htmlFor="body"></label>
-      <input
+      <textarea
+        className="textarea is-primary is-small is-align-self-flex-end "
         value={newComment}
         required="required"
         name="body"
@@ -56,8 +57,8 @@ export default function PostComment({ setComments }) {
         onChange={(event) => {
           setNewComment(event.target.value);
         }}
-      ></input>
-      <button type="submit" disabled={commentCount > 0}>
+      ></textarea>
+      <button className="button" type="submit" disabled={commentCount > 0}>
         Post comment
       </button>
     </form>

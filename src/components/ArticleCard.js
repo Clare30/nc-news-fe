@@ -1,32 +1,29 @@
 import { Link } from "react-router-dom";
 
 export default function ArticleCard({ article }) {
+  const background = {
+    coding: "has-background-info-dark",
+    football: "has-background-primary-dark",
+    cooking: "has-background-danger",
+  };
   return (
-
-    <div className="articleCard">
-      <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
-      <p>By {article.author}</p>
-      <p>{new Date(article.created_at).toLocaleDateString()}</p>
-      <p>{article.topic}</p>
-    <div className="card" key={article.article_id}>
-      <div className="card-header-title is-centered">
-        <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
-      </div>
-      <div className="card-content has-text-centered">
-        <p>By {article.author}</p>
-        <p>{new Date(article.created_at).toLocaleDateString()}</p>
-        <p>{article.topic}</p>
-      </div>
-      <div>
-        <div className="icon-text">
-          <ion-icon name="thumbs-up-sharp"></ion-icon>
-          {article.votes}
+    <Link className=" tile is-parent is-4 content" to={`/articles/${article.article_id}`}>
+      <div className={`tile is-child box ${background[article.topic]} box has-text-light has-shadow`} key={article.article_id}>
+        <h2 className="has-text-light"> {article.title} </h2>
+        <div className=" subtitle is-6 has-text-light">
+          <p>By {article.author}</p>
+          <p>{new Date(article.created_at).toLocaleDateString()}</p>
+          <p className="">{article.topic}</p>
         </div>
-        <div className="icon-text">
-          <ion-icon name="chatbubble-sharp"></ion-icon> {article.comment_count}
+        <div className="level is-align-content-center">
+          <div>
+            <ion-icon name="thumbs-up-sharp" /> {article.votes}
+          </div>
+          <div>
+            <ion-icon name="chatbubble-sharp" /> {article.comment_count}
+          </div>
         </div>
       </div>
-
-    </div>
+    </Link>
   );
 }

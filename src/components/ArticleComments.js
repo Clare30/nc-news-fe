@@ -17,19 +17,17 @@ export default function ArticleComments() {
   }, [id]);
 
   return (
-    <section>
+    <section className="is-flex-direction-row">
       Comments {comments.length}
-      <Expandable classAssign="commentButton">
+      <Expandable classAssign="button" textOpen={"Show Comments"} textClose={"Hide Comments"}>
         <PostComment setComments={setComments} />
-        <div className="commentList">
-          {comments.map((comment) => {
-            return (
-              <div key={comment.comment_id}>
-                <CommentCard comment={comment} setComments={setComments} />
-              </div>
-            );
-          })}
-        </div>
+        {comments.map((comment) => {
+          return (
+            <div key={comment.comment_id}>
+              <CommentCard comment={comment} setComments={setComments} />
+            </div>
+          );
+        })}
       </Expandable>
     </section>
   );

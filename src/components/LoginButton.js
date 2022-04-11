@@ -6,8 +6,12 @@ export default function LoginButton() {
   const { loggedIn } = useContext(loggedInUser);
 
   return loggedIn.length <= 0 ? (
-    <Link to="/login">Login</Link>
+    <Link className="has-text-light navbar-item" to="/login">
+      Login
+    </Link>
   ) : (
-    <Link to="/login">{loggedIn}</Link>
+    <Link className="has-text-light navbar-item" to="/login">
+      Logged in as: {loggedIn}
+    </Link>
   );
 }

@@ -35,17 +35,17 @@ export default function SingleArticle() {
       </progress>
     );
   return (
-    <article className="singleArticle">
+    <div className="content has-text-centered is-align-content-space-between ">
       <h1>{article.title}</h1>
       <p>Written by {article.author} </p>
-      <p className="postedDate">
+      <p className="content is-spaced">
         Posted on {new Date(article.created_at).toLocaleDateString("en-uk")}
       </p>
-      <p className="articleBody">{article.body}</p>
-      <div className="articleButtons">
+      <p className="content is-spaced">{article.body}</p>
+      <div className="content is-spaced">
         <ArticleVote article={article} />
         <ArticleComments />
       </div>
-    </article>
+    </div>
   );
 }
