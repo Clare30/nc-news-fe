@@ -1,32 +1,29 @@
 import { Link } from "react-router-dom";
 
 export default function ArticleCard({ article }) {
+  const background = {
+    coding: "articleCoding",
+    football: "articleFootball",
+    cooking: "articleCooking",
+  };
   return (
-    <div className="articleCard">
-      <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
-      <p>By {article.author}</p>
-      <p>{new Date(article.created_at).toLocaleDateString()}</p>
-      <p>{article.topic}</p>
-      <div className="tile" key={article.article_id}>
-        <div className="card-header-title is-centered">
-          <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
-        </div>
-        <div className="card-content has-text-centered">
+    
+      <article className={`tile is-child box ${background[article.topic]} articleContent content`} key={article.article_id}>
+        <Link className="has-text-light" to={`/articles/${article.article_id}`}>
+          <h3 className="has-text-light"> {article.title} </h3>
           <p>By {article.author}</p>
           <p>{new Date(article.created_at).toLocaleDateString()}</p>
           <p>{article.topic}</p>
-        </div>
-        <div>
-          <div className="icon-text">
-            <ion-icon name="thumbs-up-sharp"></ion-icon>
-            {article.votes}
+           <div className="level mx-5">
+          <div>
+            <ion-icon name="thumbs-up-sharp" /> {article.votes}
           </div>
-          <div className="icon-text">
-            <ion-icon name="chatbubble-sharp"></ion-icon>{" "}
-            {article.comment_count}
+          <div>
+            <ion-icon name="chatbubble-sharp" /> {article.comment_count}
           </div>
         </div>
-      </div>
-    </div>
+        </Link>
+      </article>
+   
   );
 }

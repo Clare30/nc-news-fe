@@ -22,27 +22,23 @@ export default function ArticleList() {
 
   if (isLoading)
     return (
-      <>
+      <div className="loading">
         <progress className="progress is-small is-primary" max="100">
           15%
         </progress>
-      </>
+      </div>
     );
   return (
     <section>
-      <div className="container">
-        <ArticleSort
-          setOrder={setOrder}
-          setSortBy={setSortBy}
-          sortBy={sortBy}
-          button={button}
-          setButton={setButton}
-        />
-        <div>
-          {articles.map((article) => {
-            return <ArticleCard article={article} key={article.article_id} />;
-          })}
-        </div>
+      <ArticleSort setOrder={setOrder} setSortBy={setSortBy} sortBy={sortBy} button={button} setButton={setButton} />
+      <div className="tile is-ancestor columns is-multiline mt-5">
+        {articles.map((article) => {
+          return (
+            <div key={article.article_id} className="tile is-parent is-4 ">
+              <ArticleCard article={article} key={article.article_id} />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

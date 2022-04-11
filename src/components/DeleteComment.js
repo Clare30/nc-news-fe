@@ -3,7 +3,7 @@ import { loggedInUser } from "./context";
 import * as api from "../api";
 
 export default function DeleteComment({ comment, setComments }) {
-  const [disabled, setDisable] = useState(false);
+  const [disabled, setDisable] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const { loggedIn } = useContext(loggedInUser);
@@ -31,11 +31,9 @@ export default function DeleteComment({ comment, setComments }) {
   if (isLoading) return <p>Removing comment...</p>;
   if (loggedIn === comment.author)
     return (
-      <div>
-        <button disabled={disabled > 0} onClick={handleClick}>
-          Delete
-        </button>
-      </div>
+      <button className="button is-small is-responsive level-right" disabled={disabled > 0} onClick={handleClick}>
+        Delete
+      </button>
     );
 
   return <> </>
