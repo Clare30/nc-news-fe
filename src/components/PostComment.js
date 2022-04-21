@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as api from "../api";
 
-export default function PostComment({ setComments }) {
+export default function PostComment({ setComments, setPosted }) {
   const [newComment, setNewComment] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

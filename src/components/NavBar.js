@@ -39,35 +39,4 @@ export default function NavBar() {
       </ul>
     </div>
     </div>
-  );
-
-  // return (
-  //   <div className="mb-5">
-  //     <nav className="navbar has-background-primary-dark has-shadow" role="navigation" aria-label="main navigation">
-  //       {/* <Expandable classAssign="is-hidden-desktop navbar-burger" textOpen={"Hi"} textClose={"Hide"}> */}
-  //       <div className={"navbar-menu is-active"}>
-  //         <div className="navbar-start">
-  //           <Link className="has-text-light navbar-item has-text-weight-bold" to="/">
-  //             NC News
-  //           </Link>
-  //         </div>
-  //         <div className="navbar-end is-size-7-mobile ">
-  //           <Link className="has-text-light navbar-item" to="/">
-  //             All
-  //           </Link>
-  //           {topics.map(({ slug }) => {
-  //             return (
-  //               <Link className="has-text-light navbar-item" key={slug} to={`/${slug}`}>
-  //                 {slug.charAt(0).toUpperCase() + slug.slice(1)}{" "}
-  //               </Link>
-  //             );
-  //           })}
-
-  //          
-  //         </div>
-  //       </div>
-  //       {/* </Expandable> */}
-  //     </nav>
-  //   </div>
-  // );
-}
+  ) }
