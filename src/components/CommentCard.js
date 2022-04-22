@@ -3,11 +3,10 @@ import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
 
 import en from "javascript-time-ago/locale/en.json";
-import ru from "javascript-time-ago/locale/ru.json";
+
 
 export default function CommentCard({ comment, setComments }) {
-  TimeAgo.addDefaultLocale(en);
-  TimeAgo.addLocale(ru);
+    TimeAgo.addLocale(en);
 
   return (
     <div className="content comment card has-background-link-light pt-2">
