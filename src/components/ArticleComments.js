@@ -24,7 +24,7 @@ export default function ArticleComments() {
         {comments.map((comment) => {
           return (
          <CommentCard key={comment.comment_id} comment={comment} setComments={setComments} />
-         
+
           );
         })}
       </Expandable>
