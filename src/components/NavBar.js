@@ -29,7 +29,7 @@ export default function NavBar() {
         {topics.map(({ slug }) => {
           return (
             <li key={slug}>
-              <Link  to={`/${slug}`}>
+              <Link  to={`/topics/${slug}`}>
                 {slug.charAt(0).toUpperCase() + slug.slice(1)}{" "}
               </Link>
             </li>

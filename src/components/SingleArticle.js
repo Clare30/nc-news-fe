@@ -26,7 +26,7 @@ export default function SingleArticle() {
   }, [id]);
 
   if (error)
-    return <ErrorComponent status={error.status} msg={error.data.msg} />;
+    return <ErrorComponent status={error.status} msg={error.data.msg.toUpperCase()} />;
 
   if (isLoading)
     return (

@@ -28,6 +28,7 @@ export default function CommentCard({ comment, setComments }) {
         setError("Sorry, that didn't work, please try again");
       });
   };
+
   return (
     <div className="content comment card has-background-link-light pt-2">
       <div className="level mx-4">
@@ -39,6 +40,7 @@ export default function CommentCard({ comment, setComments }) {
             Delete
           </button>
         )}
+
       </div>
       <p className="mb-5 card-content">{comment.body}</p>
     </div>
