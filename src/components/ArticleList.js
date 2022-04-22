@@ -20,12 +20,12 @@ export default function ArticleList() {
     api.fetchArticles(topic, sortBy, order).then(({ articles }) => {
       setArticles(articles);
       setIsLoading(false);
-    }). catch((err) => { 
+    }).catch((err) => { 
       console.log(err)
       setError(err.response);
     })
   }, [topic, sortBy, order]);
-  
+
 if(error) return <ErrorComponent status={error.status} msg={error.data.msg.toUpperCase()} />
   
 if (isLoading)
