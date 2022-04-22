@@ -17,7 +17,7 @@ export function fetchTopics() {
 }
 
 export function fetchArticlesById(id) {
-  return api.get(`/articles/${id}`).then((res) => res.data);
+    return api.get(`/articles/${id}`).then((res) => res.data);
 }
 
 export function amendVoteCount(id, num) {

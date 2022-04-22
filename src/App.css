@@ -1,126 +1,57 @@
-/* .App {
+.App {
   text-align: center;
-}
-
-@media only screen and (min-width: 600px) {
-  .articleList {
-    grid-template-columns: minmax(3, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-      "header header"
-      "nav content";
+   width: 75%;
+   margin: auto;
   }
-  .singleArticle {
-    max-width: 50%;
-    margin: auto;
-  }
+
+.loading { 
+  justify-content: center;
+  margin-top: 30%;
 }
 
-.articleList {
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  gap: 1px;
+.articleCoding { 
+  background-color: mediumpurple;
+}
+.articleCooking { 
+  background-color: rgb(233, 82, 27);
+}
+.articleFootball { 
+  background-color: rgb(110, 160, 24);
 }
 
-.articleCard {
-  border: 5px solid;
-  border-radius: 10%;
-  padding: 10px;
-}
-
-.navbar {
-  grid-area: nav;
+.articleContent {
+  color: #fff;
   display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 5%;
-  max-width: 75%;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 5px 10px 5px rgba(85, 75, 75, 0.993);
+}
+
+.articleContent:hover {filter: brightness(125%);
+}
+
+.articleContent:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.comment { 
+  
   margin: auto;
-}
-
-.articleBody {
-  padding: 5%;
-  max-width: 75%;
-  margin: auto;
-}
-
-.articleButtons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 75%;
-  margin: auto;
-}
-
-.voteButton {
-  flex: 1px;
-  padding: 4px;
-  margin-top: 5%;
-  border-width: 1px;
-  border-radius: 4px;
-  border-color: #e6e5ed;
-  justify-content: flex-start;
-  max-width: 40%;
-  color: rgb(0, 0, 0);
-}
-
-.commentButton {
-  flex: 1px;
-  padding: 4px;
-  margin-top: 5%;
-  border-width: 1px;
-  border-radius: 4px;
-  border-color: #e6e5ed;
-  background-color: #f8f8f9;
-  justify-content: flex-start;
-  margin-bottom: 5%;
-}
-
-.postedDate {
-  padding: 1%;
-  text-align: center;
-  font-size: 0.7em;
-}
-
-.commentCard {
   border-bottom: black solid;
+  text-align: left;
+
 }
 
-.commentList {
-  margin: auto;
-  margin-top: 5%;
-  border-top: black solid;
-  max-width: 100%;
+ion-icon { 
+  font-size: 20px;
 }
 
-.commentLogin {
-  font-weight: bold;
-}
 
-.commentBox {
-  flex: 1px;
-  padding: 4px;
-  margin-right: 1px;
-  margin-top: 5%;
-  border-width: 1px;
-  border-radius: 4px;
-  border-color: #e6e5ed;
-  background-color: #f8f8f9;
-  justify-content: flex-start;
-  margin-bottom: 5%;
-}
 
-.submit {
-  flex: 1px;
-  padding: 4px;
-  margin-right: 1px;
-  border-width: 1px;
-  border-radius: 4px;
-  border-color: #e6e5ed;
-  background-color: #f8f8f9;
-  justify-content: flex-start;
-  margin-bottom: 5%;
-} */
+
+
+
+
+
+

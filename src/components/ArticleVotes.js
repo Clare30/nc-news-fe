@@ -19,23 +19,23 @@ export default function ArticleVote({ article }) {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className="content mt-5">
       Votes {article.votes + votes} <br></br>
-      <button className="voteButton"
+      <button className="button is-small is-responsive mr-2 mt-2"
         disabled={votes === 1}
         onClick={() => {
           handleVoteClick(1);
         }}
       >
-        +
+       <ion-icon name="thumbs-up-sharp" />
       </button>
-      <button className="voteButton"
+      <button className="button is-small is-responsive mt-2"
         disabled={votes <= 0}
         onClick={() => {
           handleVoteClick(-1);
         }}
       >
-        -
+         <ion-icon name="thumbs-down-sharp" />
       </button>
     </div>
   );

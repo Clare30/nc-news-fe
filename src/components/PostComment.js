@@ -37,17 +37,18 @@ export default function PostComment({ setComments }) {
   if (isLoading) return <p>Posting...</p>;
   if (loggedIn.length <= 0) {
     return (
-      <p className="commentLogin">
+      <p className="mt-5">
         To post a comment, please log in <Link to="/login">here</Link>
       </p>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Logged in as {loggedIn}</p>
+    <form className=" postComment content is-spaced" onSubmit={handleSubmit}>
+      <p className="mt-5 heading has-text-weight-semibold has-text-link">Logged in as {loggedIn}</p>
       <label htmlFor="body"></label>
-      <input
+      <textarea
+        className="textarea is-small"
         value={newComment}
         required="required"
         name="body"
@@ -56,8 +57,8 @@ export default function PostComment({ setComments }) {
         onChange={(event) => {
           setNewComment(event.target.value);
         }}
-      ></input>
-      <button type="submit" disabled={commentCount > 0}>
+      ></textarea>
+      <button className="button is-responsive mt-5" type="submit" disabled={commentCount > 0}>
         Post comment
       </button>
     </form>

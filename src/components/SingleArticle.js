@@ -30,19 +30,18 @@ export default function SingleArticle() {
 
   if (isLoading)
     return (
-      <progress className="progress is-small is-primary" max="100">
+      <progress className=" loading progress is-small is-primary" max="100">
         15%
       </progress>
     );
   return (
-    <article className="singleArticle">
+    <article className="content singleArticle">
       <h1>{article.title}</h1>
-      <p>Written by {article.author} </p>
-      <p className="postedDate">
+      <div className="level"><div>Written by {article.author} </div><div>
         Posted on {new Date(article.created_at).toLocaleDateString("en-uk")}
-      </p>
+      </div></div>
       <p className="articleBody">{article.body}</p>
-      <div className="articleButtons">
+      <div>
         <ArticleVote article={article} />
         <ArticleComments />
       </div>
