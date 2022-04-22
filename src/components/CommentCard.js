@@ -9,12 +9,11 @@ export default function CommentCard({ comment, setComments }) {
   TimeAgo.addDefaultLocale(en);
   TimeAgo.addLocale(ru);
 
-  console.log(comment.created_at);
   return (
     <div className="content comment card has-background-link-light pt-2">
       <div className="level mx-4">
         <h3 className="card-header"> {comment.author}</h3>
-        <ReactTimeAgo date={comment.created_at} locale="en-gb" />
+        <ReactTimeAgo date={new Date(comment.created_at)} locale="en-gb" />
         <DeleteComment comment={comment} setComments={setComments} />
       </div>
       <p className="mb-5 card-content">{comment.body}</p>
