@@ -21,8 +21,7 @@ export default function ArticleList() {
       setArticles(articles);
       setIsLoading(false);
     }).catch((err) => { 
-      console.log(err)
-      setError(err.response);
+       setError(err.response);
     })
   }, [topic, sortBy, order]);
 

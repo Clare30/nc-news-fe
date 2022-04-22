@@ -7,8 +7,7 @@ export default function Users({ setLoggedIn }) {
 
   useEffect(() => {
     api.fetchUsers().then(({ users }) => {
-     console.log(users) 
-     setUsers(users);
+       setUsers(users);
     });
   }, []);
 
