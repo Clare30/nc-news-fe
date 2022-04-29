@@ -22,10 +22,10 @@ export default function PostComment({ setComments, setPosted }) {
         setComments((currComments) => {
           setNewComment("");
           return [comment, ...currComments];
+          setPosted(true);
         });
         setIsLoading(false);
         alert("Comment posted!");
-        setPosted(true)
         setCommentCount(0);
       })
       .catch((error) => {
