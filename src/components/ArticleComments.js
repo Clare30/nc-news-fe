@@ -15,16 +15,16 @@ export default function ArticleComments() {
     api.fetchComments(id).then(({ comments }) => {
       setComments(comments);
     });
-  }, [id, posted])
+  }, [id, posted]);
 
   return (
     <section className="is-flex-direction-row">
       Comments {comments.length}
       <Expandable classAssign="button is-responsive mt-2" textOpen={"Show Comments"} textClose={"Hide Comments"}>
         <PostComment setComments={setComments} setPosted={setPosted}/>
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           return (
-         <CommentCard key={comment.comment_id} comment={comment} setComments={setComments} />
+         <CommentCard key={index} comment={comment} setComments={setComments} />
 
           );
         })}

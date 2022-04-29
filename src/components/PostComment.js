@@ -22,16 +22,17 @@ export default function PostComment({ setComments, setPosted }) {
         setComments((currComments) => {
           return [newComment, ...currComments];
         });
-        setPosted(true);
-        setNewComment("");
-        setIsLoading(false);
-        alert("Comment posted!"); 
-        setCommentCount(0);
-      })
-      .catch((error) => {
+        alert("Comment posted!");
+        setIsLoading(false)
+        setCommentCount(0)
+        setNewComment("")
+        setPosted(true)
+      }).catch((error) => {
         setCommentCount((currCount) => currCount - 1);
         setError("Sorry, that didn't work, please try again");
-      });
+      }); 
+       
+    setPosted(false);
   };
 
   if (error) return <p>{error}</p>;

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 export default function CommentCard({ comment, setComments }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  
+
   const { loggedIn } = useContext(loggedInUser);
   const { id } = useParams();
   const handleClick = () => {
@@ -18,9 +18,9 @@ export default function CommentCard({ comment, setComments }) {
         return api.fetchComments(id);
       })
       .then(({ comments }) => {
+        setIsLoading(false);
         setComments(comments);
-        alert("Comment deleted!");
-        setIsLoading(false)
+        alert("Comment deleted!");        
       })
       .catch(() => {
         setError("Sorry, that didn't work, please try again");
@@ -31,16 +31,15 @@ export default function CommentCard({ comment, setComments }) {
     <div className="content comment card has-background-link-light pt-2">
       <div className="level mx-4">
         <h3 className="card-header"> {comment.author}</h3>
-        <p>{new Date(comment.created_at).toLocaleDateString("en-GB", {
-          timeZone: "Europe/London",
-        })}</p> 
+        <p>
+          {new Date(comment.created_at).toLocaleString("en-GB")}
+        </p>
         {error && <p>{error}</p>} {isLoading && !error && <p>Removing comment...</p>}
         {loggedIn === comment.author && !isLoading && (
           <button className="button is-small is-responsive level-right" onClick={handleClick}>
             Delete
           </button>
         )}
-
       </div>
       <p className="mb-5 card-content">{comment.body}</p>
     </div>
