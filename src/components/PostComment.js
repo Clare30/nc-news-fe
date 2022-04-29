@@ -19,11 +19,13 @@ export default function PostComment({ setComments, setPosted }) {
     api
       .postComment({ username: loggedIn, body: newComment }, id)
       .then(({ comment }) => {
+      
         setComments((currComments) => {
+          setPosted(true);
           setNewComment("");
           return [comment, ...currComments];
-          setPosted(true);
-        });
+               });
+  
         setIsLoading(false);
         alert("Comment posted!");
         setCommentCount(0);
