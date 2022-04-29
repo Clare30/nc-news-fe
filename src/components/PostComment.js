@@ -20,6 +20,7 @@ export default function PostComment({ setComments, setPosted }) {
       .postComment({ username: loggedIn, body: newComment }, id)
       .then(() => {
         setPosted(true);
+        setNewComment("");
         setIsLoading(false);
         alert("Comment posted!");
         setCommentCount(0);
