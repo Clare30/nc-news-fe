@@ -19,6 +19,9 @@ export default function PostComment({ setComments, setPosted }) {
     api
       .postComment({ username: loggedIn, body: newComment }, id)
       .then(() => {
+        setCommentList((currComments) => {
+          return [newComment, ...currComments];
+        });
         setPosted(true);
         setNewComment("");
         setIsLoading(false);
