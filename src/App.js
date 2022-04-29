@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { loggedInUser } from "./components/context";
 import ArticleList from "./components/ArticleList";
-
+import ErrorPage from "./components/ErrorPage";
 import NavBar from "./components/NavBar";
 import SingleArticle from "./components/SingleArticle";
 import Users from "./components/Users";
@@ -16,6 +16,7 @@ function App() {
         <div className="App">
           <NavBar />
           <Routes>
+            <Route path="*" element={<ErrorPage />} />
             <Route path="/" element={<ArticleList />} />
             <Route path="/topics/:topic" element={<ArticleList />} />
             <Route path="/articles/:id" element={<SingleArticle />} />

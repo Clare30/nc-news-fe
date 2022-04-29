@@ -21,21 +21,14 @@ export default function ArticleVote({ article }) {
   return (
     <div className="content mt-5">
       Votes {article.votes + votes} <br></br>
-      <button className="button is-small is-responsive mr-2 mt-2"
+      <button
+        className="button is-small is-responsive mr-2 mt-2"
         disabled={votes === 1}
         onClick={() => {
           handleVoteClick(1);
         }}
       >
-       <ion-icon name="thumbs-up-sharp" />
-      </button>
-      <button className="button is-small is-responsive mt-2"
-        disabled={votes <= 0}
-        onClick={() => {
-          handleVoteClick(-1);
-        }}
-      >
-         <ion-icon name="thumbs-down-sharp" />
+        <ion-icon name="thumbs-up-sharp" />
       </button>
     </div>
   );
