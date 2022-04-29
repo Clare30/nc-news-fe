@@ -10,6 +10,7 @@ export default function CommentCard({ comment, setComments }) {
   TimeAgo.addLocale(en);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  
   const { loggedIn } = useContext(loggedInUser);
   const { id } = useParams();
   const handleClick = () => {
@@ -23,6 +24,7 @@ export default function CommentCard({ comment, setComments }) {
       .then(({ comments }) => {
         setComments(comments);
         alert("Comment deleted!");
+        setIsLoading(false)
       })
       .catch(() => {
         setError("Sorry, that didn't work, please try again");

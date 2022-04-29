@@ -15,7 +15,7 @@ export default function ArticleComments() {
     api.fetchComments(id).then(({ comments }) => {
       setComments(comments);
     });
-  }, [id, posted]);
+  }, [id, posted])
 
   return (
     <section className="is-flex-direction-row">
