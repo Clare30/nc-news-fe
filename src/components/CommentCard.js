@@ -31,7 +31,7 @@ export default function CommentCard({ comment, setComments }) {
     <div className="content comment card has-background-link-light pt-2">
       <div className="level mx-4">
         <h3 className="card-header"> {comment.author}</h3>
-        <p>{comment.created_at}</p> 
+        <p>{new Date(comment.created_at).toLocaleDateString()}</p> 
         {error && <p>{error}</p>} {isLoading && !error && <p>Removing comment...</p>}
         {loggedIn === comment.author && !isLoading && (
           <button className="button is-small is-responsive level-right" onClick={handleClick}>
