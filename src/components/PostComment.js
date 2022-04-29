@@ -25,7 +25,7 @@ export default function PostComment({ setComments, setPosted }) {
         setPosted(true);
         setNewComment("");
         setIsLoading(false);
-        alert("Comment posted!");
+        alert("Comment posted!"); 
         setCommentCount(0);
       })
       .catch((error) => {

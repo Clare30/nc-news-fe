@@ -1,13 +1,9 @@
 import { useContext, useState } from "react";
 import { loggedInUser } from "./context";
 import * as api from "../api";
-import ReactTimeAgo from "react-time-ago";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en.json";
 import { useParams } from "react-router-dom";
 
 export default function CommentCard({ comment, setComments }) {
-  TimeAgo.addLocale(en);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   
@@ -35,7 +31,7 @@ export default function CommentCard({ comment, setComments }) {
     <div className="content comment card has-background-link-light pt-2">
       <div className="level mx-4">
         <h3 className="card-header"> {comment.author}</h3>
-        <ReactTimeAgo date={new Date(comment.created_at)} locale="en-gb" />
+        <p>{comment.created_at}</p> />
         {error && <p>{error}</p>} {isLoading && !error && <p>Removing comment...</p>}
         {loggedIn === comment.author && !isLoading && (
           <button className="button is-small is-responsive level-right" onClick={handleClick}>
